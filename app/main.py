@@ -1,3 +1,4 @@
+import random
 
 ###########################################################
 #       Quick-Sort Algorithm in Python
@@ -48,4 +49,35 @@ def partition(unsortedArray, first, last):
 # call my functions
 testArray = [1, 4, 92, 103.3, 6, 8, 9.5, 11, 23.5, 900, 120, 5, 1, 2]
 quickSort(testArray)
+print("Quick Sort:")
 print(testArray)
+
+
+###########################################################
+#       Binary Search Tree Algorithm
+###########################################################
+#       Runtime: O(log n)
+###########################################################
+#       Author: Trent Hardy
+###########################################################
+
+def binSearch(unsortedArray, point):
+    if len(unsortedArray) == 0:
+        return False
+    else:
+        midpoint = len(unsortedArray)//2
+        if unsortedArray[midpoint] == point:
+            return True
+        else:
+            if point < unsortedArray[midpoint]:
+                return binSearch(unsortedArray[:midpoint], point)
+            else:
+                return binSearch(unsortedArray[midpoint+1:], point)
+
+
+testArray2 = [90, 5.5, 5.3, 2.9, 8.4, 2.3, 999, 0, 12, 13, 99.3,
+              254, 23232, 2323121, 32324, 32321212, 323121445, 32323239]
+print("Binary Search:")
+# point identifies the target item
+print(binSearch(testArray2, 12))
+print(binSearch(testArray2, 2))
