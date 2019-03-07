@@ -8,15 +8,21 @@
 ###########################################################
 
 # sorting call function
+
+
 def quickSort(unsortedArray):
     sorter(unsortedArray, 0, len(unsortedArray)-1)
 # recursive sorter function
+
+
 def sorter(unsortedArray, first, last):
     if first < last:
         split = partition(unsortedArray, first, last)
         sorter(unsortedArray, first, split - 1)
         sorter(unsortedArray, split + 1, last)
 # partioning array function.
+
+
 def partition(unsortedArray, first, last):
     pivotvalue = unsortedArray[first]
     left = first+1
@@ -38,7 +44,8 @@ def partition(unsortedArray, first, last):
     unsortedArray[right] = temp
     return right
 
-# call functions
-testArray = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+
+# call my functions
+testArray = [1, 4, 92, 103.3, 6, 8, 9.5, 11, 23.5, 900, 120, 5, 1, 2]
 quickSort(testArray)
 print(testArray)
